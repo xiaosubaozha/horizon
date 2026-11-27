@@ -1,8 +1,9 @@
 {
   "ai": {
-    "provider": "gemini",
-    "model": "gemini-3.8-flash",
-    "api_key_env": "GOOGLE_API_KEY",
+    "provider": "ali",
+    "model": "qwen-plus",
+    "api_key_env": "DASHSCOPE_API_KEY",
+    "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
     "temperature": 0.3,
     "max_tokens": 8192,
     "throttle_sec": 1,
@@ -134,7 +135,7 @@
           "channel": "zaihuapd",
           "enabled": true,
           "fetch_limit": 20,
-          "profile": ["tech-news"]
+          "profile": "tech-news"
         }
       ]
     }
@@ -153,40 +154,40 @@
     "default_group_limit": null
   },
   "webhook": {
-    "enabled": false,
-    "url_env": "HORIZON_WEBHOOK_URL",
     "delivery": "summary_and_items",
-    "overview_position": "last",
-    "platform": "feishu",
-    "layout": "collapsible",
+    "enabled": false,
     "fallback_layout": "markdown",
+    "headers": "",
     "languages": [
       "zh"
     ],
+    "layout": "collapsible",
+    "overview_position": "last",
+    "platform": "feishu",
     "request_body": {
-      "msg_type": "interactive",
       "card": {
-        "schema": "2.0",
+        "body": {
+          "elements": [
+            {
+              "content": "#{summary}",
+              "tag": "markdown"
+            }
+          ]
+        },
         "config": {
           "wide_screen_mode": true
         },
         "header": {
+          "template": "blue",
           "title": {
-            "tag": "plain_text",
-            "content": "#{message_title}"
-          },
-          "template": "blue"
+            "content": "#{message_title}",
+            "tag": "plain_text"
+          }
         },
-        "body": {
-          "elements": [
-            {
-              "tag": "markdown",
-              "content": "#{summary}"
-            }
-          ]
-        }
-      }
+        "schema": "2.0"
+      },
+      "msg_type": "interactive"
     },
-    "headers": ""
+    "url_env": "HORIZON_WEBHOOK_URL"
   }
 }
