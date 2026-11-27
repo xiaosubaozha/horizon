@@ -1,7 +1,7 @@
 {
   "ai": {
     "provider": "ali",
-    "model": "qwen-plus",
+    "model": "qwen4-max",
     "api_key_env": "DASHSCOPE_API_KEY",
     "base_url": "https://ws-rvjc8yxa4cl8xfjp.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
     "temperature": 0.3,
