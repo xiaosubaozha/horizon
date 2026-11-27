@@ -18,7 +18,7 @@
     "default_profile": "tech-news",
     "profile_settings": {
       "tech-news": {
-        "threshold": 5.0,
+        "threshold": 4.0,
         "topic_dedup": true
       },
       "tech-blog": {
@@ -92,6 +92,14 @@
         "enabled": true,
         "category": "semiconductors",
         "profile": "tech-news"
+      },
+      {
+        "name": "Sean Goedecke",
+        "url": "https://www.seangoedecke.com/rss.xml",
+        "enabled": true,
+        "category": "software-engineering",
+        "profile": "tech-blog",
+        "content_extractor": "trafilatura"
       }
     ],
     "reddit": {
@@ -118,6 +126,17 @@
       ],
       "users": [],
       "fetch_comments": 10
+    },
+    "telegram": {
+      "enabled": true,
+      "channels": [
+        {
+          "channel": "zaihuapd",
+          "enabled": true,
+          "fetch_limit": 20,
+          "profile": ["tech-news"]
+        }
+      ]
     }
   },
   "collection": {
